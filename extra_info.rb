@@ -204,6 +204,7 @@
     decorate_greeting("John")
     decorate_greeting(1)
 #METHOD DEFIINITION ORDER:
+
   #The call stack methods works where as long as a method has been defined before calling it the method will execute 
   def top
     bottom
