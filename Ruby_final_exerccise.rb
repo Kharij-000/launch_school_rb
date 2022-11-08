@@ -51,3 +51,18 @@
     execute {puts "Hello from inside the execute method!"}
 #Exercise 5:
 
+#EXCERCISES SECTION 
+#Exercise 1: Use the each method of Array to iterate over [1, 2, 3, 4, 5, 6, 7, 8, 9, 10], and print out each value.
+  #Answer:  
+    ex1_array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+    ex1_array.each {|num| puts num}
+#Exercise 2: Same as above, but only print out values greater than 5.
+  #Answer:
+    ex2_array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+    ex2_array.each do |num|
+      if num > 5
+        puts num
+      else
+      end
+    end
+#Exercise 3:
