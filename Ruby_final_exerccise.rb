@@ -93,5 +93,34 @@
   #Answer:
     ex6_array = [0, 1, 2, 2, 3, 4, 5, 5, 6, 7, 8, 9, 9, 10, 11]
     puts ex6_array.uniq
-#Exerise 7:
-  
+#Exerise 7: What's the major difference between an Array and a Hash!
+  #Answer:
+    #Arrays consist of list of either strings or integers or other arrays
+    #Hashes are key value pairs that store data using reference Keys generally created using symbols
+#Exercise 8:Create a Hash, with one key-value pair, using both Ruby syntax styles.
+  #Answer:
+    ex8_hash = {:key1 => "value1"}
+    ex8_hash2 = {key2: "value2"}
+
+    p ex8_hash
+#Exercise 9:Suppose you have a hash h = {a:1, b:2, c:3, d:4}
+  #1. Get the value of key `:b`.
+  #2. Add to this hash the key:value pair `{e:5}`
+  #3. Remove all key:value pairs whose value is less than 3.5
+  #Answer:
+  #1
+  h = {a:1, b:2, c:3, d:4}
+  p h[:b]
+  #2
+  h[:e] = 5
+  p h
+  #3
+  h.each do |key, value|
+    value.to_f
+    if value < 3.5 
+      h.delete(key)
+    else
+    end
+  end
+
+  puts h
