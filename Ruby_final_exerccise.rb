@@ -65,4 +65,33 @@
       else
       end
     end
-#Exercise 3:
+#Exercise 3:Now, using the same array from #2, use the select method to extract all odd numbers into a new array.
+  #Answer:
+    ex3_array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+    ex3_array.select {|num| num%2 != 0 }
+#Exercise 4: Append 11 to the end of the original array. Prepend 0 to the beginning.
+  #My_Answer: while this answer did work I Dont believe it should be used or is best practice 
+    ex4_array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+    ex4_array.prepend(0)
+    ex4_array.append(11)
+    puts ex4_array
+  #LS_Answer
+    #Appending 
+      ex4_array.push(11) #destructive method
+      #----or---- 
+      ex4_array << 11 #also destructive shovel method
+    #PrePrend
+      ex4_array.unshift(0)
+#Exercise 5: Get rid of 11. And append a 3.
+  #Answer:
+    ex5_array = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
+    ex5_array.pop(1)
+    p ex5_array
+    ex5_array << 3
+    p ex5_array
+#Exercise 6:Get rid of duplicates without specifically removing any one value.
+  #Answer:
+    ex6_array = [0, 1, 2, 2, 3, 4, 5, 5, 6, 7, 8, 9, 9, 10, 11]
+    puts ex6_array.uniq
+#Exerise 7:
+  
