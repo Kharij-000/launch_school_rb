@@ -122,5 +122,77 @@
     else
     end
   end
-
   puts h
+  #LS Answer: While the answer that i provided works its very inefficient this could have been completed in one line
+    #one line version 
+      h.delete_if {|key, value| v < 3.5}
+    #multiline condensed 
+      h.delete_if do |key, value|
+        v < 3.5
+      end
+#Exercise 10: Can hash values be arrays? Can you have an array of hashes? (give examples)
+  #Answer:
+    #Arrays can be stored as hash values by both creating arrays in the hash itself or using predefined arrays as values or symbols 
+    #thesame can be said in reverse as arrays can store hash data sets as well 
+    array = [1,2,3,4,"butter"]
+    h = {a:1, b:2, c:3, d:[1,2,3,4,5,6,7,8,], e:array} 
+    puts h
+#Exercise 11:Given the following data structures, write a program that copies the information from the array into the empty hash that applies to the correct person.
+  #Sample code
+    contact_data = [["joe@email.com", "123 Main st.", "555-123-4567"],
+            ["sally@email.com", "404 Not Found Dr.", "123-234-3454"]]
+
+    contacts = {"Joe Smith" => {}, "Sally Johnson" => {}}
+
+    # Expected output:
+    #  {
+    #    "Joe Smith"=>{:email=>"joe@email.com", :address=>"123 Main st.", :phone=>"555-123-4567"},
+    #    "Sally Johnson"=>{:email=>"sally@email.com", :address=>"404 Not Found Dr.",  :phone=>"123-234-3454"}
+    #  }
+  #Answer
+    #After overthinking this for a considerable amount of time you looked at the answer to realize you made the issue way
+    #more complicated then they needed to be below is what you should have done
+    contacts["Joe Smith"][:email] = contact_data[0][0]
+    contacts["Joe Smith"][:address] = contact_data[0][1]
+    contacts["Joe Smith"][:phone] = contact_data[0][2]
+    contacts["Sally Johnson"][:email] = contact_data[1][0]
+    contacts["Sally Johnson"][:address] = contact_data[1][1]
+    contacts["Sally Johnson"][:phone] = contact_data[1][2]
+#Exercise 12:Using the hash you created from the previous exercise, demonstrate how you would access Joe's email and Sally's phone number.
+  #Answer:
+    contact_data = [["joe@email.com", "123 Main st.", "555-123-4567"],
+    ["sally@email.com", "404 Not Found Dr.", "123-234-3454"]]
+    contacts = {"Joe Smith" => {}, "Sally Johnson" => {}}
+    contacts["Joe Smith"][:email] = contact_data[0][0]
+    contacts["Joe Smith"][:address] = contact_data[0][1]
+    contacts["Joe Smith"][:phone] = contact_data[0][2]
+    contacts["Sally Johnson"][:email] = contact_data[1][0]
+    contacts["Sally Johnson"][:address] = contact_data[1][1]
+    contacts["Sally Johnson"][:phone] = contact_data[1][2]
+    
+    puts contacts["Joe Smith"][:email]
+    puts contacts["Sally Johnson"][:phone]
+#Exercise 13:Use Ruby's Array method delete_if and String method start_with? to delete all of the strings that begin with an "s" in the following array.
+  #Answer:
+    arr = ['snow', 'winter', 'ice', 'slippery', 'salted roads', 'white trees']
+    arr.delete_if{|string| string.start_with? "s"}
+    puts arr
+
+    arr = ['snow', 'winter', 'ice', 'slippery', 'salted roads', 'white trees']
+    arr.delete_if do |string|
+      string.start_with?("w", "s")
+    end
+
+    puts arr
+#Exercise 14: Take the following array and turn it into a new array that consists of strings containing one word. (ex. ["white snow", etc...] → ["white", "snow", etc...]. Look into using Array's map and flatten methods, as well as String's split method.
+a = ['white snow', 'winter wonderland', 'melting ice',
+  'slippery sidewalk', 'salted roads', 'white trees']
+  def nff(b)
+    b.map! do |letter|
+      letter.split 
+    end
+    b.flatten!
+    #puts b# the above map function will not actually edit the targeted list
+  end
+ nff(a)
+ p a
