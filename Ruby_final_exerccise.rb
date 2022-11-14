@@ -185,14 +185,29 @@
 
     puts arr
 #Exercise 14: Take the following array and turn it into a new array that consists of strings containing one word. (ex. ["white snow", etc...] → ["white", "snow", etc...]. Look into using Array's map and flatten methods, as well as String's split method.
-a = ['white snow', 'winter wonderland', 'melting ice',
-  'slippery sidewalk', 'salted roads', 'white trees']
-  def nff(b)
-    b.map! do |letter|
-      letter.split 
+  #Answer:
+    a = ['white snow', 'winter wonderland', 'melting ice',
+      'slippery sidewalk', 'salted roads', 'white trees']
+      def nff(b)
+        b.map! do |letter|
+          letter.split 
+        end
+        b.flatten!
+        #puts b# the above map function will not actually edit the targeted list
+      end
+    nff(a)
+    p a
+#Exercise 16 CHALLANGE!!!:In exercise 11, we manually set the contacts hash values one by one. Now, programmatically loop or 
+#iterate over the contacts hash from exercise 11, and populate the associated data from the contact_data array. Hint: you will probably need to iterate over ([:email, :address, :phone]), and some helpful methods might be the Array shift and first methods.
+  #Answer:
+  contact_data = [["joe@email.com", "123 Main st.", "555-123-4567"],
+  ["sally@email.com", "404 Not Found Dr.", "123-234-3454"]]
+  contacts = {"Joe Smith" => {}}
+  contacts.each do |hash|
+    if hash.key?(:email)
+    else
+      hash{email:1}
     end
-    b.flatten!
-    #puts b# the above map function will not actually edit the targeted list
-  end
- nff(a)
- p a
+
+  puts contacts
+   
